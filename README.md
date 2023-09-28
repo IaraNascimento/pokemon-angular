@@ -10,3 +10,9 @@ ng config schematics.@schematics/angular:component.style scss
 ```
 
 ## 2. Apagando conteúdo original e testes para ter a base do projeto
+
+## 3. Adicionando infomação de code coverage (tentar mantar acima de 80%)
+
+Cobertura atual:
+
+- app.component.ts (100%)
