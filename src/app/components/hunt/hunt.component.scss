@@ -1,0 +1,48 @@
+$right-dist-title: 40px;
+$container-padding: 40px;
+
+.pa-hunt {
+  &-title {
+    img {
+      position: absolute;
+      right: $right-dist-title;
+      top: 20px;
+      width: 300px;
+      max-width: calc(88% - $right-dist-title);
+      z-index: 1;
+    }
+  }
+
+  &-hunt {
+    width: calc(100% - 2 * $container-padding);
+    background-image: url('../../../assets/images/background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  @media (max-width: 799px) {
+    &-hunt {
+      text-align: center;
+      padding-top: 200px;
+      height: calc(100vh - 200px);
+      min-height: calc(480px - 200px);
+      * {
+        margin-bottom: 16px;
+      }
+    }
+  }
+  
+  @media (min-width: 800px) {
+    &-hunt {
+      padding-top: 80px;
+      height: calc(100vh - 80px);
+      min-height: calc(480px - 80px);
+      * {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 80px;
+      }
+    }  
+  }
+}

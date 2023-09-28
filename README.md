@@ -30,3 +30,5 @@ ng g c components/hunt
 ```
 
 O reset de CSS do Meyer foi adicionado em styles.scss.
+
+### 5. Criando o HTML e SASS base da aplicação (break point: 800px)

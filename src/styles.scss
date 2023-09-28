@@ -48,3 +48,10 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+.pa {
+  &-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
