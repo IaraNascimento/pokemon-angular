@@ -6,7 +6,7 @@
     <div class="pa-hunt-hunt">
       <app-button text="procurar" (click)="huntPokemon()"></app-button>
       <div class="pa-hunt-found">
-        <img *ngIf="pokemon && pokemon?.sprites?.front_default" [src]="pokemon?.sprites?.front_default" />
+        <img *ngIf="pokemon?.sprites?.front_default" [src]="pokemon?.sprites?.front_default" />
         <p *ngIf="!pokemon || !pokemon?.sprites?.front_default">Nada encontrado...<br /><br />Continue procurando!</p>
       </div>
       <app-button *ngIf="ableToCapture" text="capturar" (click)="capture(pokemon)"></app-button>

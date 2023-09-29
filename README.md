@@ -51,3 +51,12 @@ Cobertura atual (Statements e/ou Lines):
 - app/components/button (100%)
 - app/components/hunt (33.33%)
 - app/services (100%)
+
+### 9. Pequenos ajustes de layout e fazendo cobertura de testes
+
+Cobertura atual (Statements e/ou Lines):
+
+- app (100%)
+- app/components/button (100%)
+- app/components/hunt (100%)
+- app/services (100%)

@@ -24,10 +24,16 @@ export class HuntComponent {
   }
 
   public async huntPokemon(): Promise<void> {
-    this.pokemon = (await this.pokemonService.getPokemon(
+    const response = (await this.pokemonService.getPokemon(
       this.randonNumber()
     )) as Pokemon;
-    this.ableToCapture = this.toggleAbleToCapture(this.captured, this.pokemon);
+    if (response.sprites?.front_default) {
+      this.pokemon = response;
+      this.ableToCapture = this.toggleAbleToCapture(
+        this.captured,
+        this.pokemon
+      );
+    }
   }
 
   public capture(pokemon: Pokemon | undefined): void {
