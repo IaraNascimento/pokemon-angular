@@ -1,48 +1,100 @@
 $right-dist-title: 40px;
 $container-padding: 40px;
+$top-dist-mobile: 160px;
+$top-dist-desktop: 48px;
+$padding-counter: 16px;
 
 .pa-hunt {
   &-title {
     img {
       position: absolute;
-      right: $right-dist-title;
-      top: 20px;
       width: 300px;
       max-width: calc(88% - $right-dist-title);
       z-index: 1;
     }
   }
 
-  &-hunt {
+  &-wrap {
     width: calc(100% - 2 * $container-padding);
     background-image: url('../../../assets/images/background.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  &-found {
+    background-color: gray;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &-captured {
+    background-color: white;
+    padding: 8px $padding-counter;
+    text-align: center;
+    line-height: 24px;
+    
+    &-total {
+      color: #e67e22;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
   
   @media (max-width: 799px) {
-    &-hunt {
-      text-align: center;
-      padding-top: 200px;
-      height: calc(100vh - 200px);
-      min-height: calc(480px - 200px);
-      * {
-        margin-bottom: 16px;
+    &-title {
+      img {
+        top: 20px;
+        left: 50%;
+        transform: translate(-50%, 0);
       }
+    }
+
+    &-wrap {
+      text-align: center;
+      padding-top: $top-dist-mobile;
+      height: calc(100vh - $top-dist-mobile);
+      min-height: calc(480px - $top-dist-mobile);
+    }
+    
+    &-hunt > * {
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+
+    &-captured {
+      margin: 16px auto;
+      width: 160px;
     }
   }
   
   @media (min-width: 800px) {
-    &-hunt {
-      padding-top: 80px;
-      height: calc(100vh - 80px);
-      min-height: calc(480px - 80px);
-      * {
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 80px;
+    &-title {
+      img {
+        top: 48px;
+        right: $right-dist-title;
       }
-    }  
+    }
+
+    &-wrap {
+      padding-top: $top-dist-desktop;
+      height: calc(100vh - $top-dist-desktop);
+      min-height: calc(480px - $top-dist-desktop);
+    }
+
+    &-hunt > * {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 48px;
+    }
+
+    &-captured {
+      width: 342px;
+      margin: 16px 0 48px 0;
+    }
   }
 }

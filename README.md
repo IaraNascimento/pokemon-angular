@@ -32,3 +32,11 @@ ng g c components/hunt
 O reset de CSS do Meyer foi adicionado em styles.scss.
 
 ### 5. Criando o HTML e SASS base da aplicação (break point: 800px)
+
+### 6. Criando component de botão, ajustando testes e melhorando SASS
+
+Cobertura atual:
+
+- app (100%)
+- app/components/button (100%)
+- app/components/hunt (100%)

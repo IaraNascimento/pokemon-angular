@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HuntComponent } from './hunt.component';
-import { ButtonComponent } from '../button/button.component';
+import { ButtonComponent } from './button.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-describe('HuntComponent', () => {
-  let component: HuntComponent;
-  let fixture: ComponentFixture<HuntComponent>;
+describe('ButtonComponent', () => {
+  let component: ButtonComponent;
+  let fixture: ComponentFixture<ButtonComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HuntComponent, ButtonComponent],
+      declarations: [ButtonComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     });
-    fixture = TestBed.createComponent(HuntComponent);
+    fixture = TestBed.createComponent(ButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
