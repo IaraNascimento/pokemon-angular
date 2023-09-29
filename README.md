@@ -42,3 +42,12 @@ Cobertura atual:
 - app/components/hunt (100%)
 
 ### 7. Implementando serviço de captura de pokemon com seus testes
+
+### 8. Usando o serviço de caça de pokemon e funções auxiliares (não tem testes mas a funcionalidade já existe)
+
+Cobertura atual (Statements e/ou Lines):
+
+- app (100%)
+- app/components/button (100%)
+- app/components/hunt (33.33%)
+- app/services (100%)

@@ -1,4 +1,11 @@
 import { Component } from '@angular/core';
+import { PokemonService } from 'src/app/services/pokemon.service';
+
+export interface Pokemon {
+  sprites?: {
+    front_default?: string;
+  };
+}
 
 @Component({
   selector: 'app-hunt',
@@ -6,5 +13,42 @@ import { Component } from '@angular/core';
   styleUrls: ['./hunt.component.scss'],
 })
 export class HuntComponent {
-  public captured: number = 0;
+  public captured: Array<Pokemon> = [];
+  public pokemon: undefined | Pokemon = undefined;
+  public ableToCapture: boolean = false;
+
+  constructor(public pokemonService: PokemonService) {}
+
+  public randonNumber(): number {
+    return Math.floor(Math.random() * 151) + 1;
+  }
+
+  public async huntPokemon(): Promise<void> {
+    this.pokemon = (await this.pokemonService.getPokemon(
+      this.randonNumber()
+    )) as Pokemon;
+    this.ableToCapture = this.toggleAbleToCapture(this.captured, this.pokemon);
+  }
+
+  public capture(pokemon: Pokemon | undefined): void {
+    if (pokemon?.sprites?.front_default) {
+      this.captured.push(pokemon);
+      this.ableToCapture = this.toggleAbleToCapture(
+        this.captured,
+        this.pokemon
+      );
+    }
+  }
+
+  public toggleAbleToCapture(
+    pokemonList: Array<Pokemon>,
+    currentPokemon: undefined | Pokemon
+  ): boolean {
+    if (typeof currentPokemon === 'undefined') {
+      return false;
+    }
+    return !pokemonList.some(
+      (p) => p.sprites?.front_default === currentPokemon.sprites?.front_default
+    );
+  }
 }
