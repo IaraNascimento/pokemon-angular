@@ -40,3 +40,5 @@ Cobertura atual:
 - app (100%)
 - app/components/button (100%)
 - app/components/hunt (100%)
+
+### 7. Implementando serviço de captura de pokemon com seus testes
